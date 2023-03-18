@@ -37,17 +37,24 @@ document.getElementById("generate").onclick = function() {
       let div = document.createElement("div");
       container.appendChild(div).className = "cell";
     }
+    
     const cells = Array.from(document.getElementsByClassName("cell"));
-    let proportion = 672 / canvas - 2;
+    
+    let proportion = 672 / canvas;
+    
     for (let i = 0; i < cells.length; i++) {
       cells[i].setAttribute("style", `height: ${proportion}px`)
       cells[i].setAttribute("style", `width: ${proportion}px`)
     };
+    
     for (let i = 0; i < cells.length; i++) {
       cells[i].addEventListener('mouseover', () => {
+        if (down == true) {
         cells[i].classList.add('black');
+        }
       });
-    }
+    };
+    
     document.getElementById("restart").onclick = function() {
       for (let i = 0; i < cells.length; i++) {
         cells[i].classList.remove('black');
@@ -56,12 +63,24 @@ document.getElementById("generate").onclick = function() {
   } 
 }
 
+let down = false;
+
+container.addEventListener("mousedown", function(e) {
+  down = true;
+});
+
+container.addEventListener("mouseup", function(e) {
+  down = false;
+});
 
 for (let i = 0; i < cells.length; i++) {
-  cells[i].addEventListener('mouseover', () => {
+  cells[i].addEventListener('mouseover', () => { 
+    if (down == true) {
     cells[i].classList.add('black');
-  });
+    }
+  })
 }
+
 
 document.getElementById("restart").onclick = function() {
   for (let i = 0; i < cells.length; i++) {
