@@ -1,5 +1,13 @@
+body {
+  background-image: url(etch-a-sketch.jpg);
+  background-position: 50% 10%; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: 875px 825px; /* Resize the background image to cover the entire container */
+  background-color: #C12C28;
+}
+
 h1 {
-  text-align: center;
+  margin-bottom: 150px;
 }
 
 .container {
@@ -8,7 +16,7 @@ h1 {
   width: 672px;
   height: 672px;
   margin: 0 auto;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   margin-top: 50px;
 }
 
@@ -23,4 +31,20 @@ h1 {
 .button {
   display: flex;
   justify-content: center;
+  gap: 700px;
+}
+
+button {
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+.refresh {
+  max-width: 75px;
+  max-height: 75px;
+}
+
+.new {
+  max-width: 75px;
+  max-height: 75px;
 }
