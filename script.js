@@ -8,7 +8,7 @@ function gridMaker(num) {
 }
 
 function boxAdjust(num) {
-  let proportion = 672 / num - 2;
+  let proportion = 672 / num;
   for (let i = 0; i < cells.length; i++) {
     cells[i].setAttribute("style", `height: ${proportion}px`)
     cells[i].setAttribute("style", `width: ${proportion}px`)
